@@ -18,6 +18,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
 
+                <!-- Logo -->
                 <a href="index.html" class="text-2xl font-bold text-green-700 tracking-tight flex items-center">
                     emisyon<span class="text-slate-800">ticareti</span>.org
                 </a>
@@ -33,27 +34,33 @@
                 </div>
 
                 <!-- Mobile hamburger -->
-                <button id="mobile-menu-button" class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-green-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                <button id="mobile-menu-button"
+                        class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-green-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
                     <span class="sr-only">Menüyü aç</span>
-                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                         viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
 
             </div>
         </div>
 
-        <!-- Mobile menu dropdown -->
+        <!-- Mobile menu -->
         <div id="mobile-menu" class="md:hidden hidden border-t border-gray-100 bg-white">
-            <div class="px-4 pt-2 pb-4 space-y-1">
-                <a href="index.html#nedir" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-green-600">Nedir?</a>
-                <a href="index.html#hizmetler" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100 hover:text-green-600">Hizmetler</a>
-                <a href="blog.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 bg-gray-100">Blog / Haberler</a>
-                <a href="index.html#iletisim" class="block px-3 py-2 rounded-md text-base font-medium bg-green-600 text-white hover:bg-green-700">Bize Ulaşın</a>
+            <div class="px-4 py-3 space-y-2">
+                <a href="index.html#nedir" class="block text-gray-700 hover:text-green-600">Nedir?</a>
+                <a href="index.html#hizmetler" class="block text-gray-700 hover:text-green-600">Hizmetler</a>
+                <a href="blog.html" class="block text-gray-900 font-semibold">Blog / Haberler</a>
+                <a href="index.html#iletisim" class="block bg-green-600 text-white px-4 py-2 rounded-md text-center hover:bg-green-700 transition">
+                    Bize Ulaşın
+                </a>
             </div>
         </div>
     </nav>
 
+    <!-- ANA İÇERİK -->
     <main class="py-16">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 class="text-4xl font-extrabold text-gray-900 mb-4 text-center">Tüm Yazılarımız</h1>
@@ -63,16 +70,19 @@
             
             <div class="space-y-6">
 
-                <!-- Yeni EU ETS Yazısı (kapak görselli) -->
-                <a href="blog-eu-ets.html" class="block">
+                <!-- 1: EU ETS REHBERİ (YENİ) -->
+                <!-- LINK: blog-ets-nedir.html -->
+                <a href="blog-ets-nedir.html" class="block">
                     <div class="p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-l-4 border-amber-500 flex items-start gap-4">
+                        <!-- Görsel -->
                         <div class="hidden sm:block flex-shrink-0 w-28 h-28 overflow-hidden rounded-lg">
                             <img 
                                 src="https://images.pexels.com/photos/2817465/pexels-photo-2817465.jpeg"
-                                alt="Avrupa Birliği binaları ve yıldızlı AB bayrağı ile emisyon ticareti kavramı"
+                                alt="Avrupa Birliği binaları ve AB bayrağı ile emisyon ticareti kavramı"
                                 class="w-full h-full object-cover"
                             />
                         </div>
+                        <!-- Metin -->
                         <div class="flex-grow">
                             <span class="inline-block bg-amber-100 text-amber-700 text-xs px-3 py-1 rounded-full font-semibold mb-2">EU ETS</span>
                             <h2 class="text-2xl font-bold text-gray-900 mb-2">
@@ -86,9 +96,19 @@
                     </div>
                 </a>
                 
-                <!-- Mevcut 1: Avrupa’da ETS -->
+                <!-- 2: Avrupa’da ETS (Mevcut) -->
+                <!-- LINK: blog-avrupada-ets.html -->
                 <a href="blog-avrupada-ets.html" class="block">
-                    <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-l-4 border-indigo-600 flex items-start">
+                    <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-l-4 border-indigo-600 flex items-start gap-4">
+                        <!-- Görsel -->
+                        <div class="hidden sm:block flex-shrink-0 w-28 h-28 overflow-hidden rounded-lg">
+                            <img 
+                                src="https://images.pexels.com/photos/1743364/pexels-photo-1743364.jpeg"
+                                alt="Avrupa Birliği bayrağı ve şehir silüeti"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <!-- Metin -->
                         <div class="flex-grow">
                             <span class="inline-block bg-indigo-100 text-indigo-700 text-xs px-3 py-1 rounded-full font-semibold mb-2">AB ETS</span>
                             <h2 class="text-2xl font-bold text-gray-900 mb-2">
@@ -102,11 +122,21 @@
                     </div>
                 </a>
 
-                <!-- Mevcut 2: ETS Nedir -->
+                <!-- 3: ETS NEDİR (Mevcut) -->
+                <!-- LINK: blog-ets.html -->
                 <a href="blog-ets.html" class="block">
-                    <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-l-4 border-green-600 flex items-start">
+                    <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-l-4 border-green-600 flex items-start gap-4">
+                        <!-- Görsel -->
+                        <div class="hidden sm:block flex-shrink-0 w-28 h-28 overflow-hidden rounded-lg">
+                            <img 
+                                src="https://images.pexels.com/photos/39553/industry-sunrise-clouds-fog-39553.jpeg"
+                                alt="Sanayi tesisleri ve sisli gün doğumu"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <!-- Metin -->
                         <div class="flex-grow">
-                            <span class="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-semibold mb-2">ETS</span>
+                            <span class="inline-block bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-semibold mb-2">ETS Temelleri</span>
                             <h2 class="text-2xl font-bold text-gray-900 mb-2">
                                 Karbon Piyasalarının Kalbi: ETS Nedir?
                             </h2>
@@ -118,9 +148,19 @@
                     </div>
                 </a>
 
-                <!-- Mevcut 3: Karbon Ayak İzi -->
+                <!-- 4: KARBON AYAK İZİ (Mevcut) -->
+                <!-- LINK: blog-karbon.html -->
                 <a href="blog-karbon.html" class="block">
-                    <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-l-4 border-blue-600 flex items-start">
+                    <div class="p-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-l-4 border-blue-600 flex items-start gap-4">
+                        <!-- Görsel -->
+                        <div class="hidden sm:block flex-shrink-0 w-28 h-28 overflow-hidden rounded-lg">
+                            <img 
+                                src="https://images.pexels.com/photos/5029853/pexels-photo-5029853.jpeg"
+                                alt="Yeşil bitki tutan eller ve sürdürülebilirlik kavramı"
+                                class="w-full h-full object-cover"
+                            />
+                        </div>
+                        <!-- Metin -->
                         <div class="flex-grow">
                             <span class="inline-block bg-blue-100 text-blue-700 text-xs px-3 py-1 rounded-full font-semibold mb-2">Karbon Yönetimi</span>
                             <h2 class="text-2xl font-bold text-gray-900 mb-2">
@@ -138,16 +178,15 @@
         </div>
     </main>
 
-    <footer class="bg-gray-900 text-gray-300 py-12 border-t border-gray-800 mt-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="border-t border-gray-800 mt-4 pt-6 text-sm text-center text-gray-500">
-                &copy; 2024 emisyonticareti.org - Tüm Hakları Saklıdır.
-            </div>
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-300 py-10 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm">&copy; 2024 emisyonticareti.org — Tüm Hakları Saklıdır.</p>
         </div>
     </footer>
 
+    <!-- MOBILE MENU SCRIPT -->
     <script>
-        // Mobil menü toggle
         document.addEventListener('DOMContentLoaded', function () {
             const btn = document.getElementById('mobile-menu-button');
             const menu = document.getElementById('mobile-menu');
