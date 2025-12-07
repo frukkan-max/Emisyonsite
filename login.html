@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Giriş - Emisyon Ticaret</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: #020617;
+      padding: 24px 28px;
+      border-radius: 12px;
+      border: 1px solid #1e293b;
+      width: 100%;
+      max-width: 360px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+    input {
+      width: 100%;
+      padding: 8px 10px;
+      margin-bottom: 12px;
+      border-radius: 6px;
+      border: 1px solid #4b5563;
+      background: #020617;
+      color: #e5e7eb;
+    }
+    button {
+      width: 100%;
+      padding: 8px 10px;
+      margin-top: 4px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    #btn-login {
+      background: #38bdf8;
+      margin-bottom: 6px;
+    }
+    #btn-register {
+      background: #1e293b;
+      color: #e5e7eb;
+    }
+    #auth-result {
+      margin-top: 10px;
+      font-size: 13px;
+      min-height: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Giriş / Kayıt</h2>
+    <label for="email">E-posta</label>
+    <input type="email" id="email" placeholder="ornek@mail.com" required />
+
+    <label for="password">Şifre</label>
+    <input type="password" id="password" placeholder="••••••••" required />
+
+    <button type="button" id="btn-login">Giriş Yap</button>
+    <button type="button" id="btn-register">Kayıt Ol</button>
+
+    <div id="auth-result"></div>
+  </div>
+
+  <!-- Supabase client -->
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script>
+    const SUPABASE_URL = "https://truouhnpvkwsjoimynbz.supabase.co";
+   const SUPABASE_ANON_KEY = "sb_publishable_xhCZxnKZOlfBDUmqe6ylog_qiQpNpsl";
+
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const emailInput = document.getElementById('email');
+    const passInput = document.getElementById('password');
+    const resultDiv = document.getElementById('auth-result');
+
+    document.getElementById('btn-register').onclick = async () => {
+      resultDiv.textContent = "Kayıt yapılıyor...";
+      const { data, error } = await supabaseClient.auth.signUp({
+        email: emailInput.value,
+        password: passInput.value,
+      });
+
+      if (error) {
+        resultDiv.textContent = "Kayıt hatası: " + error.message;
+      } else {
+        resultDiv.textContent = "Kayıt başarılı. E-postanı kontrol etmen gerekebilir.";
+      }
+    };
+
+    document.getElementById('btn-login').onclick = async () => {
+      resultDiv.textContent = "Giriş yapılıyor...";
+      const { data, error } = await supabaseClient.auth.signInWithPassword({
+        email: emailInput.value,
+        password: passInput.value,
+      });
+
+      if (error) {
+        resultDiv.textContent = "Giriş hatası: " + error.message;
+      } else {
+        resultDiv.textContent = "Giriş başarılı, yönlendiriliyorsun...";
+        // Bir sonraki adımda yapacağımız excel sayfasına yönlendirme:
+        window.location.href = "excel.html";
+      }
+    };
+  </script>
+</body>
+</html>
